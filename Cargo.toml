@@ -160,3 +160,12 @@ handl-lib-serialize = { path = "../lib-serialize" }
 
 [patch."https://github.com/handl-lang/lib-kv-map"]
 handl-lib-kv-map = { path = "../lib-kv-map" }
+
+[patch."https://github.com/handl-lang/lib-test"]
+handl-lib-test = { path = "../lib-test" }
+
+[patch."https://github.com/handl-lang/lib-rand-stub"]
+handl-lib-rand-stub = { path = "../lib-rand-stub" }
+
+[patch."https://github.com/handl-lang/lib-type-handl"]
+handl-lib-type-handl = { path = "../lib-type-handl" }

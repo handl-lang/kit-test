@@ -11,3 +11,5 @@ handl-kit-core = { git = "https://github.com/handl-lang/kit-core", branch = "mai
 handl-plugin-lib-stdlib = { git = "https://github.com/handl-lang/host", branch = "main" }
 handl-plugin-lib-tag = { git = "https://github.com/handl-lang/host", branch = "main" }
 handl-plugin-lib-handl = { git = "https://github.com/handl-lang/host", branch = "main" }
+handl-lib-test = { git = "https://github.com/handl-lang/lib-test", branch = "main" }
+handl-lib-rand-stub = { git = "https://github.com/handl-lang/lib-rand-stub", branch = "main" }
