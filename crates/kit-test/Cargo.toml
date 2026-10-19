@@ -1,0 +1,13 @@
+[package]
+name = "handl-kit-test"
+version = "0.1.0"
+edition = "2024"
+description = "Test-framework kit — test/property/benchmark/fuzz/snapshot/assert plus the deterministic rand-stub backend."
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+handl-kit-core = { git = "https://github.com/handl-lang/kit-core", branch = "main" }
+handl-plugin-lib-stdlib = { git = "https://github.com/handl-lang/host", branch = "main" }
+handl-plugin-lib-tag = { git = "https://github.com/handl-lang/host", branch = "main" }
+handl-plugin-lib-handl = { git = "https://github.com/handl-lang/host", branch = "main" }
