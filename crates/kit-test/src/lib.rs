@@ -31,7 +31,7 @@ const FUZZ_FUNCS: &[&str] = &["run"];
 
 // rand-stub — the deterministic, no-effect `rand` backend used by the
 // test framework (`test`/`property`/`fuzz` modules need `rand.*`).
-const RAND_STUB_HNL: &str = include_str!("../../../../lib-rand-stub/src/rand-stub.hnl");
+const RAND_STUB_HNL: &str = include_str!("../../../../lib-rand-stub/src/index.hnl");
 const RAND_STUB_FUNCS: &[&str] = &[
     "int",
     "float",
