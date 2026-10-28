@@ -12,4 +12,6 @@ handl-plugin-lib-stdlib = { git = "https://github.com/handl-lang/host", branch =
 handl-plugin-lib-tag = { git = "https://github.com/handl-lang/host", branch = "main" }
 handl-plugin-lib-handl = { git = "https://github.com/handl-lang/host", branch = "main" }
 handl-lib-test = { git = "https://github.com/handl-lang/lib-test", branch = "main" }
-handl-lib-rand-stub = { git = "https://github.com/handl-lang/lib-rand-stub", branch = "main" }
+
+[build-dependencies]
+handl-pkg-vendor = { path = "../../../host/crates/pkg-vendor" }
