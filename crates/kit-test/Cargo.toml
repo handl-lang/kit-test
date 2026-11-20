@@ -5,6 +5,9 @@ edition = "2024"
 description = "Test-framework kit — test/property/benchmark/fuzz/snapshot/assert plus the deterministic rand-stub backend."
 license.workspace = true
 repository.workspace = true
+readme = "../../README.md"
+keywords = ["handl", "kit", "testing"]
+categories = ["development-tools"]
 
 [dependencies]
 handl-kit-core = { git = "https://github.com/handl-lang/kit-core", branch = "main" }
