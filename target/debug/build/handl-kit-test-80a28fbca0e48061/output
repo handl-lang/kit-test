@@ -1,0 +1,2 @@
+cargo:rerun-if-changed=../../../lib-rand-stub/pkg.hnl
+cargo:rerun-if-changed=../../../lib-rand-stub/src/index.hnl

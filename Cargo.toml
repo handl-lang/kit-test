@@ -58,20 +58,29 @@ hnl-engine-typecheck = { path = "../engine-typecheck" }
 handl-kit-core = { path = "../kit-core/crates/kit-core" }
 
 [patch."https://github.com/handl-lang/kernel"]
+handl-calculus = { path = "../kernel/crates/handl-calculus" }
 handl-language = { path = "../kernel/crates/handl-language" }
 handl-value = { path = "../kernel/crates/handl-value" }
-handl-lib-bytes = { path = "../kernel/crates/bytes" }
-handl-lib-cmp = { path = "../kernel/crates/cmp" }
-handl-lib-combinators = { path = "../kernel/crates/combinators" }
-handl-lib-error = { path = "../kernel/crates/error" }
-handl-lib-mood = { path = "../kernel/crates/mood" }
-handl-lib-obj = { path = "../kernel/crates/obj" }
 handl-lib-ops = { path = "../kernel/crates/ops" }
 handl-lib-prim = { path = "../kernel/crates/prim" }
 handl-lib-prim-handl = { path = "../kernel/crates/prim-handl" }
-handl-lib-type = { path = "../kernel/crates/type" }
 
 [patch."https://github.com/handl-lang/native"]
+
+[patch."https://github.com/handl-lang/lib-bytes"]
+handl-lib-bytes = { path = "../lib-bytes" }
+
+[patch."https://github.com/handl-lang/lib-cmp"]
+handl-lib-cmp = { path = "../lib-cmp" }
+
+[patch."https://github.com/handl-lang/lib-error"]
+handl-lib-error = { path = "../lib-error" }
+
+[patch."https://github.com/handl-lang/lib-mood"]
+handl-lib-mood = { path = "../lib-mood" }
+
+[patch."https://github.com/handl-lang/lib-obj"]
+handl-lib-obj = { path = "../lib-obj" }
 
 # Match platform's dev profile: unoptimized (opt-level=0) builds overflow the
 # default test-thread stack in the recursive tree-walk eval.
@@ -168,5 +177,8 @@ handl-lib-tag = { path = "../lib-tag" }
 [patch."https://github.com/handl-lang/lib-transform"]
 handl-lib-transform = { path = "../lib-transform" }
 
+[patch."https://github.com/handl-lang/lib-comb"]
+handl-lib-comb = { path = "../lib-comb" }
 
-
+[patch."https://github.com/handl-lang/lib-type"]
+handl-lib-type = { path = "../lib-type" }

@@ -1,0 +1,2 @@
+cargo:rerun-if-changed=../lib-char/pkg.hnl
+cargo:rerun-if-changed=../lib-char/src/index.hnl
