@@ -1,3 +1,0 @@
-cargo:rerun-if-changed=../../../lib-type-handl/pkg.hnl
-cargo:rerun-if-changed=../../../lib-type-handl/src/type-handl.hnl
-cargo:rerun-if-changed=../../../lib-type-handl/src/type-handl.test.hnl

@@ -1,3 +1,0 @@
--- lib-rand-c: modules this package provides (entry defaults to
--- src/index.hnl; N modules resolve to src/<name>/index.hnl).
-{ modules: ["rand-c"] }

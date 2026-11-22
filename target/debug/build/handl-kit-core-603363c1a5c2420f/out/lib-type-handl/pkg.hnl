@@ -1,2 +1,0 @@
--- lib-type-handl: package manifest.
-{ modules: ["type-handl"] }
