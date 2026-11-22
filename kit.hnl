@@ -1,0 +1,23 @@
+-- kit-test: kit.hnl v1 curation manifest (proposal P-004).
+-- Pure curation — no plugins, no entry/glue. `libs` entries are lib
+-- package names: the `lib-*` repo name minus the `lib-` prefix
+-- (e.g. repo `lib-rand-stub` -> "rand-stub"). Each package's own
+-- pkg.hnl `deps` pull its contracts and transitive backends; contracts
+-- whose backends declare no `deps` (rand-stub, posix-stub) are listed
+-- explicitly alongside their stub.
+{
+  name: "kit-test",
+  description: "In-language test surface — test/property/benchmark/fuzz/snapshot/assert plus deterministic rand and posix stubs.",
+  license: "MIT",
+  libs: [
+    "test",
+    "rand",
+    "rand-stub",
+    "serialize",
+    "comb",
+    "type",
+    "tag",
+    "posix",
+    "posix-stub",
+  ],
+}
