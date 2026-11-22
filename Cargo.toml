@@ -93,7 +93,6 @@ handl-plugin-lib-otlp-std = { path = "../lib-otlp-std" }
 
 [patch."https://github.com/handl-lang/host"]
 handl-plugin-lib-char-native = { path = "../lib-char-native" }
-handl-plugin-lib-crypto = { path = "../lib-crypto" }
 handl-plugin-lib-stdlib = { path = "../host/crates/plugin-lib-stdlib" }
 handl-platform = { path = "../host/crates/platform" }
 handl-plugin-ext-diag = { path = "../host/crates/plugin-ext-diag" }
@@ -104,7 +103,6 @@ handl-runtime = { path = "../host/crates/handl-runtime" }
 
 [patch."https://github.com/handl-lang/platform"]
 handl-plugin-lib-char-native = { path = "../lib-char-native" }
-handl-plugin-lib-crypto = { path = "../lib-crypto" }
 handl-plugin-lib-stdlib = { path = "../host/crates/plugin-lib-stdlib" }
 handl-platform = { path = "../host/crates/platform" }
 handl-plugin-ext-diag = { path = "../host/crates/plugin-ext-diag" }
@@ -131,16 +129,6 @@ handl-plugin-lib-char-native = { path = "../lib-char-native" }
 
 [patch."https://github.com/handl-lang/lib-collections"]
 handl-lib-collections = { path = "../lib-collections" }
-
-[patch."https://github.com/handl-lang/lib-crypto"]
-handl-plugin-lib-crypto = { path = "../lib-crypto" }
-
-
-
-
-
-
-
 
 [patch."https://github.com/handl-lang/lib-serialize-toml-c"]
 handl-plugin-lib-serialize-toml-c = { path = "../lib-serialize-toml-c" }
