@@ -3,7 +3,9 @@
 //! Extracted from `handl-kit-canonical` (ADR-0092): the pure-Handl
 //! `test`/`property`/`benchmark`/`fuzz`/`snapshot`/`assert` modules plus
 //! `rand-stub`, the deterministic no-effect `rand` backend the framework
-//! needs. A host that runs handl tests links this kit and calls
+//! needs, plus the `posix-stub` clock backend bound to the `posix` port
+//! name for `benchmark.run`'s `posix.instant_ns` reads. A host that runs
+//! handl tests links this kit and calls
 //! [`register`] before building its module registry.
 
 use std::sync::Arc;
@@ -63,6 +65,19 @@ const RAND_STUB_FUNCS: &[&str] = &[
     "seeded_gauss",
 ];
 
+// posix clock — the deterministic, no-effect `posix` backend's time
+// surface (`benchmark.run` reads `posix.instant_ns`). Bound to the port
+// name `posix`, mirroring `rand` → rand-stub above.
+const POSIX_STUB_TIME_HNL: &str =
+    include_str!(concat!(env!("OUT_DIR"), "/lib-posix-stub/src/time.hnl"));
+const POSIX_FUNCS: &[&str] = &[
+    "now_ms",
+    "instant_ns",
+    "elapsed_ns",
+    "epoch",
+    "now",
+];
+
 const SNAPSHOT_HNL: &str =
     include_str!(concat!(env!("OUT_DIR"), "/lib-test/src/snapshot.hnl"));
 const SNAPSHOT_FUNCS: &[&str] = &["format", "match"];
@@ -103,6 +118,7 @@ fn build_property_module() -> HandlModule {
 fn build_benchmark_module() -> HandlModule {
     HandlModule::new("benchmark", BENCHMARK_HNL, BENCHMARK_FUNCS)
         .with_dependency_arc(std::sync::Arc::new(TagModule))
+        .with_dependency_arc(std::sync::Arc::new(build_posix_module()))
         .with_dependency_arc(std::sync::Arc::new(
             stdlib::module_with("serialize", Arc::new(KitResolver)).expect("serialize"),
         ))
@@ -139,6 +155,16 @@ fn build_assert_module() -> HandlModule {
         ))
 }
 
+/// Build the deterministic, pure-Handl `posix` clock backend from
+/// `posix-stub`'s time surface (the `lib-time`/`time-c` fold target).
+fn build_posix_module() -> HandlModule {
+    HandlModule::new("posix", POSIX_STUB_TIME_HNL, POSIX_FUNCS).with_global_lookup(
+        std::sync::Arc::new(stdlib::TableModuleLookup::new(std::sync::Arc::new(
+            KitResolver,
+        ))),
+    )
+}
+
 /// Build the deterministic, pure-Handl `rand` backend from `rand-stub`.
 fn build_rand_stub_module() -> HandlModule {
     HandlModule::new("rand", RAND_STUB_HNL, RAND_STUB_FUNCS).with_global_lookup(
@@ -153,7 +179,8 @@ fn build_rand_stub_module() -> HandlModule {
 // ---------------------------------------------------------------------------
 
 /// The kit's module table — `test`/`property`/`benchmark`/`fuzz`/
-/// `snapshot`/`assert` plus the `rand` stub backend they depend on.
+/// `snapshot`/`assert` plus the `rand` and `posix` stub backends they
+/// depend on.
 pub const MODULES: &[(&'static str, ModuleCtor)] = &[
     ("test", |_, e| ModuleEntry::Handl(build_test_module().with_eval_engine(e))),
     ("property", |_, e| {
@@ -171,6 +198,9 @@ pub const MODULES: &[(&'static str, ModuleCtor)] = &[
     }),
     ("rand", |_, e| {
         ModuleEntry::Handl(build_rand_stub_module().with_eval_engine(e))
+    }),
+    ("posix", |_, e| {
+        ModuleEntry::Handl(build_posix_module().with_eval_engine(e))
     }),
 ];
 
