@@ -149,9 +149,6 @@ handl-plugin-lib-crypto = { path = "../lib-crypto" }
 handl-lib-desugar = { path = "../lib-desugar" }
 
 
-[patch."https://github.com/handl-lang/lib-hello"]
-handl-lib-hello = { path = "../lib-hello" }
-
 
 [patch."https://github.com/handl-lang/lib-loader"]
 handl-lib-loader = { path = "../lib-loader" }
@@ -169,9 +166,6 @@ handl-plugin-lib-serialize-yaml-c = { path = "../lib-serialize-yaml-c" }
 
 [patch."https://github.com/handl-lang/lib-str-handl"]
 handl-lib-str-handl = { path = "../lib-str-handl" }
-
-[patch."https://github.com/handl-lang/lib-tag"]
-handl-lib-tag = { path = "../lib-tag" }
 
 
 [patch."https://github.com/handl-lang/lib-transform"]
