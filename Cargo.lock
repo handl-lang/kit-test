@@ -177,7 +177,6 @@ name = "handl-kit-test"
 version = "0.1.0"
 dependencies = [
  "handl-kit-core",
- "handl-lib-test",
  "handl-pkg-vendor",
  "handl-plugin-lib-handl",
  "handl-plugin-lib-stdlib",
@@ -229,32 +228,14 @@ dependencies = [
 ]
 
 [[package]]
-name = "handl-lib-desugar"
-version = "0.1.0"
-
-[[package]]
 name = "handl-lib-error"
 version = "0.1.0"
 dependencies = [
  "handl-lib-ops",
  "handl-ops",
+ "handl-value",
  "serde_json",
 ]
-
-[[package]]
-name = "handl-lib-hello"
-version = "0.1.0"
-
-[[package]]
-name = "handl-lib-ip"
-version = "0.1.0"
-dependencies = [
- "serde_json",
-]
-
-[[package]]
-name = "handl-lib-loader"
-version = "0.1.0"
 
 [[package]]
 name = "handl-lib-mood"
@@ -297,18 +278,6 @@ dependencies = [
  "serde_json",
  "thiserror",
 ]
-
-[[package]]
-name = "handl-lib-str-handl"
-version = "0.1.0"
-
-[[package]]
-name = "handl-lib-tag"
-version = "0.1.0"
-
-[[package]]
-name = "handl-lib-test"
-version = "0.1.0"
 
 [[package]]
 name = "handl-lib-transform"
@@ -408,18 +377,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "handl-plugin-lib-crypto"
-version = "0.1.0"
-
-[[package]]
 name = "handl-plugin-lib-handl"
 version = "0.1.0"
 dependencies = [
  "handl-language",
- "handl-lib-desugar",
- "handl-lib-loader",
- "handl-lib-str-handl",
  "handl-ops",
+ "handl-pkg-vendor",
  "handl-platform",
  "handl-plugin-lib-char-native",
  "handl-plugin-module",
@@ -488,8 +451,6 @@ dependencies = [
  "handl-lib-collections",
  "handl-lib-comb",
  "handl-lib-error",
- "handl-lib-hello",
- "handl-lib-ip",
  "handl-lib-mood",
  "handl-lib-obj",
  "handl-lib-ops",
@@ -501,7 +462,6 @@ dependencies = [
  "handl-ops",
  "handl-pkg-vendor",
  "handl-platform",
- "handl-plugin-lib-crypto",
  "handl-plugin-lib-handl",
  "handl-plugin-lib-otlp-c",
  "handl-plugin-lib-otlp-std",
@@ -523,7 +483,7 @@ name = "handl-plugin-lib-tag"
 version = "0.1.0"
 dependencies = [
  "handl-language",
- "handl-lib-tag",
+ "handl-pkg-vendor",
  "handl-platform",
  "handl-plugin-lib-handl",
  "serde_json",
@@ -1652,11 +1612,31 @@ name = "handl-plugin-ffi"
 version = "0.1.0"
 
 [[patch.unused]]
+name = "handl-lib-ip"
+version = "0.1.0"
+
+[[patch.unused]]
+name = "handl-lib-desugar"
+version = "0.1.0"
+
+[[patch.unused]]
 name = "handl-lib-simplex"
 version = "0.1.0"
 
 [[patch.unused]]
 name = "handl-plugin-lib-kv"
+version = "0.1.0"
+
+[[patch.unused]]
+name = "handl-lib-str-handl"
+version = "0.1.0"
+
+[[patch.unused]]
+name = "handl-lib-test"
+version = "0.1.0"
+
+[[patch.unused]]
+name = "handl-plugin-lib-crypto"
 version = "0.1.0"
 
 [[patch.unused]]
@@ -1740,6 +1720,10 @@ name = "handl-test-utils"
 version = "0.1.0"
 
 [[patch.unused]]
+name = "handl-plugin-lib-crypto"
+version = "0.1.0"
+
+[[patch.unused]]
 name = "handl-kit-server"
 version = "0.1.0"
 
@@ -1756,6 +1740,22 @@ name = "handl-kit-prelude-lang"
 version = "0.1.0"
 
 [[patch.unused]]
+name = "handl-lib-loader"
+version = "0.1.0"
+
+[[patch.unused]]
+name = "handl-lib-ffi"
+version = "0.1.0"
+
+[[patch.unused]]
+name = "handl-plugin-lib-lang-eval"
+version = "0.1.0"
+
+[[patch.unused]]
+name = "handl-lib-perlin"
+version = "0.1.0"
+
+[[patch.unused]]
 name = "hnl-engine-typecheck-nbe"
 version = "0.1.0"
 
@@ -1764,15 +1764,7 @@ name = "hnl-engine-exec-cranelift"
 version = "0.1.0"
 
 [[patch.unused]]
-name = "handl-lib-ffi"
-version = "0.1.0"
-
-[[patch.unused]]
-name = "handl-lib-perlin"
-version = "0.1.0"
-
-[[patch.unused]]
-name = "handl-plugin-lib-lang-eval"
+name = "handl-plugin-lib-crypto"
 version = "0.1.0"
 
 [[patch.unused]]

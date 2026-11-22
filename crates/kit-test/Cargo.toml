@@ -14,7 +14,6 @@ handl-kit-core = { git = "https://github.com/handl-lang/kit-core", branch = "mai
 handl-plugin-lib-stdlib = { git = "https://github.com/handl-lang/host", branch = "main" }
 handl-plugin-lib-tag = { git = "https://github.com/handl-lang/host", branch = "main" }
 handl-plugin-lib-handl = { git = "https://github.com/handl-lang/host", branch = "main" }
-handl-lib-test = { git = "https://github.com/handl-lang/lib-test", branch = "main" }
 
 [build-dependencies]
 handl-pkg-vendor = { path = "../../../host/crates/pkg-vendor" }

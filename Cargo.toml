@@ -127,12 +127,6 @@ handl-lib-ip = { path = "../lib-ip" }
 handl-lib-serialize = { path = "../lib-serialize" }
 
 
-[patch."https://github.com/handl-lang/lib-test"]
-handl-lib-test = { path = "../lib-test" }
-
-
-
-
 
 
 [patch."https://github.com/handl-lang/lib-char-native"]

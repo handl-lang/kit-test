@@ -17,16 +17,20 @@ use handl_plugin_lib_tag::TagModule;
 // test framework modules (pure Handl — ADR-0092)
 // ---------------------------------------------------------------------------
 
-const TEST_HNL: &str = handl_lib_test::TEST_HNL;
+const TEST_HNL: &str =
+    include_str!(concat!(env!("OUT_DIR"), "/lib-test/src/test.hnl"));
 const TEST_FUNCS: &[&str] = &["run"];
 
-const PROPERTY_HNL: &str = handl_lib_test::PROPERTY_HNL;
+const PROPERTY_HNL: &str =
+    include_str!(concat!(env!("OUT_DIR"), "/lib-test/src/property.hnl"));
 const PROPERTY_FUNCS: &[&str] = &["for_all"];
 
-const BENCHMARK_HNL: &str = handl_lib_test::BENCHMARK_HNL;
+const BENCHMARK_HNL: &str =
+    include_str!(concat!(env!("OUT_DIR"), "/lib-test/src/benchmark.hnl"));
 const BENCHMARK_FUNCS: &[&str] = &["run"];
 
-const FUZZ_HNL: &str = handl_lib_test::FUZZ_HNL;
+const FUZZ_HNL: &str =
+    include_str!(concat!(env!("OUT_DIR"), "/lib-test/src/fuzz.hnl"));
 const FUZZ_FUNCS: &[&str] = &["run"];
 
 // rand-stub — the deterministic, no-effect `rand` backend used by the
@@ -59,10 +63,12 @@ const RAND_STUB_FUNCS: &[&str] = &[
     "seeded_gauss",
 ];
 
-const SNAPSHOT_HNL: &str = handl_lib_test::SNAPSHOT_HNL;
+const SNAPSHOT_HNL: &str =
+    include_str!(concat!(env!("OUT_DIR"), "/lib-test/src/snapshot.hnl"));
 const SNAPSHOT_FUNCS: &[&str] = &["format", "match"];
 
-const ASSERT_HNL: &str = handl_lib_test::ASSERT_HNL;
+const ASSERT_HNL: &str =
+    include_str!(concat!(env!("OUT_DIR"), "/lib-test/src/assert.hnl"));
 const ASSERT_FUNCS: &[&str] = &["equal", "not_equal", "true", "false", "contains"];
 
 // ---------------------------------------------------------------------------
