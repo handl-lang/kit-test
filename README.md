@@ -8,10 +8,10 @@ name minus the `lib-` prefix); each package's `pkg.hnl` `deps` pull its
 contracts and transitive backends.
 
 The Rust delivery-binding crate (`handl-kit-test`) moved to
-[`handl-lang/engine-test`](https://github.com/handl-lang/engine-test)
+[`handl-lang/tool-test`](https://github.com/handl-lang/tool-test)
 (`crates/kit-test`) — it is test-framework machinery, not a kit, so it
 belongs to the engine family. Consumers depend on it as
-`handl-kit-test = { git = "https://github.com/handl-lang/engine-test" }`.
+`handl-kit-test = { git = "https://github.com/handl-lang/tool-test" }`.
 
 ## Layout
 
