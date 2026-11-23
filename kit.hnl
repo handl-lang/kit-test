@@ -11,6 +11,7 @@
   license: "MIT",
   libs: [
     "test",
+    "mock",
     "rand",
     "rand-stub",
     "serialize",
